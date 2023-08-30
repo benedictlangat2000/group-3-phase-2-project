@@ -54,8 +54,8 @@ function App() {
       <Route path='/:index' element={<ProductDetails/>}/>
          <SignupLogin/>
     </Routes>
-  
+  )
 
-
+  }
 export default App;
 
