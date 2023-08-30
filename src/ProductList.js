@@ -35,7 +35,7 @@ const[products, setProducts] = useState([])
                            
                             <h2>{product.product_name} </h2>
                             <img src ={product.product_full_image} alt={product.product_thumbnail}/>
-                            <button><Link to ={`/${product.index}`}>View Details</Link></button>
+                            <button><Link to ={`/${index}`}>View Details</Link></button>
                             </li>
                         </ul>
                     </div>
