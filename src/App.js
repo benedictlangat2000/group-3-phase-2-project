@@ -1,29 +1,18 @@
 
 import React from "react";
-'
-import Navbar from "./Navbar";
-import Search from "./component/Search";
-
- function App(){
-    return(
-        <div>
-          <Navbar/>
-            
-        </div>
-    )
- }
- export default App
 
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Cart from "./Cart";
 import  "./App.css"
-
-
-import ProductList from './ProductList';
 import ProductDetails from './ProductDetails';
-import {Routes, Route} from 'react-router-dom'
-import SignupLogin from './SignupLogin';
+import {Routes, Route, Link} from 'react-router-dom'
+import SignupLogin from './SignupLogin'
+import EcommerceNavbar from "./Navbar";
+
+ 
+
+
 
 
 function App() {
@@ -42,18 +31,19 @@ function App() {
   }, []);
 
   return (
+    <div>
+     
 
-    <div className="App">
-      <Cart cartItem={cartItems} /> 
-    </div>
-  );
-}
-
+     
     <Routes>
-      <Route path='/' element={<ProductList/>}/>
+      <Route path="/"element={<EcommerceNavbar/> }>
       <Route path='/:index' element={<ProductDetails/>}/>
-         <SignupLogin/>
+      <Route path="/signup" element={<SignupLogin/>}/>
+      <Route path="/cart" element={<Cart cartItem={cartItems} />}/>
+      </Route>
     </Routes>
+
+    </div>
   )
 
   }
