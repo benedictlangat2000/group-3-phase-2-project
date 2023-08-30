@@ -36,16 +36,15 @@
     transform: rotate(360deg);
   }
 }
-/* App.css */
 
-/* Style for the App container */
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
   padding: 20px;
 }
 
-/* Style for the Cart container */
+
+
 .cart {
   border: 2px solid #ccc;
   padding: 20px;
@@ -56,20 +55,20 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the Cart title */
+
 .cart h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Style for individual cart items */
+
 .cart-item {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-/* Style for cart item image */
+
 .cart-item img {
   max-width: 100px;
   max-height: 100px;
@@ -77,24 +76,23 @@
   border-radius: 5px;
 }
 
-/* Style for cart item details */
+
 .cart-item div {
   flex: 1;
 }
 
-/* Style for cart item name */
 .cart-item h3 {
   font-size: 18px;
   margin-bottom: 5px;
 }
 
-/* Style for cart item price */
+
+
 .cart-item p {
   font-size: 16px;
   margin: 0;
 }
 
-/* Style for the Remove button */
 .cart-item button {
   background-color: #ff6347;
   color: #fff;
@@ -105,18 +103,19 @@
   cursor: pointer;
 }
 
-/* Style for the Total price */
+
 .cart p:last-child {
   font-size: 20px;
   margin-top: 20px;
   font-weight: bold;
 }
 
-/* Style for an empty cart message */
+
 .cart p:only-child {
   font-size: 18px;
   font-style: italic;
   margin: 20px 0;
 }
 
-/* Additional styles can be added as needed */
+
+
