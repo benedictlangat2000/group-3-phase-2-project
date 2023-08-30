@@ -1,4 +1,20 @@
 
+import React from "react";
+'
+import Navbar from "./Navbar";
+import Search from "./component/Search";
+
+ function App(){
+    return(
+        <div>
+          <Navbar/>
+            
+        </div>
+    )
+ }
+ export default App
+
+
 import React, { useState, useEffect } from "react";
 import Cart from "./Cart";
 import  "./App.css"
@@ -42,3 +58,4 @@ function App() {
 
 
 export default App;
+
