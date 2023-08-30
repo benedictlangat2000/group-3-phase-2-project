@@ -1,19 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import Home from './components/Home';
+import logo from './logo.svg';
 import './App.css';
-import Orders from './trackorder';
 
 function App() {
-  return (
-    <div>
-      <Route>
-        { <Route path="/" exact component={Home} /> }
-        <Route path="/orders" component={Orders} /> 
-      </Route>
-    </div>
-  );
-}
+  const [cartItems, setCartItems] = useState([]);
 
+  useEffect(() => {
+    // Fetch API
+    fetch("http://ecommerce.muersolutions.com/api/v1/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setCartItems(data); // Update the cart items state with the fetched data
+      })
+      .catch((error) => {
+        console.error("Error fetching cart items:", error);
+      });
+  }, []);
+
+  return (
+    <div className="App">
+     
+   <Routes>
+      <Route path='/' element={<ProductList/>}/>
+      <Route path='/:index' element={<ProductDetails/>}/>
+         <SignupLogin/>
+    </Routes>
+    </div>
+  )
+
+  }
 export default App;
 
