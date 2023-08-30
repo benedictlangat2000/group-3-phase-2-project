@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Cart from "./Cart";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    // Fetch API
+    fetch("http://ecommerce.muersolutions.com/api/v1/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setCartItems(data); // Update the cart items state with the fetched data
+      })
+      .catch((error) => {
+        console.error("Error fetching cart items:", error);
+      });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cart cartItem={cartItems} /> 
     </div>
   );
 }
