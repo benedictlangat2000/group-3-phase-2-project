@@ -1,3 +1,23 @@
+body{
+  background-color: orange;
+  
+}
+.product-card {
+  /* Add other styling for your product card here */
+  text-align: center; /* Center-align the content within the card */
+}
+
+.product-list {
+  list-style-type: square;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.product-list li {
+  margin: 5px;
+}
+
 SingupLogin {
   width: 90%;
   max-width: 470px;
@@ -67,3 +87,4 @@ button {
 button:hover {
   background-color: hwb(239 0% 30%);
 }
+
