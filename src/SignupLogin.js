@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function App() {
+function SignupLogin() {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
 
@@ -156,4 +156,4 @@ function App() {
   );
 }
 
-export default App;
+export default SignupLogin;
