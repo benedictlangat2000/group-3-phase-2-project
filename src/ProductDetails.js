@@ -20,6 +20,7 @@ function ProductDetails(){
       console.log(product)
     
 return <div key={index}>
+     <img src ={product.product_full_image} alt={product.product_thumbnail}/>
       <h2>{product.product_name}</h2>
       <p>{product.product_description}</p>
       <p>{product.unit_price} </p>

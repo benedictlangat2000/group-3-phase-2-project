@@ -1,12 +1,14 @@
-body{
+ body{
   background-color: orange;
   width: 80%;
   
 }
-.product-card {
-  /* Add other styling for your product card here */
-https://github.com/benedictlangat2000/group-3-phase-2-project/pull/9/conflict?name=src%252FApp.css&ancestor_oid=74b5e053450a48a6bdb4d71aad648e7af821975c&base_oid=79a01e11494a46d64aebb27f5d3b3a2248299afd&head_oid=a66126aeb4d241cf8742374662973a2d700bb676  text-align: center; /* Center-align the content within the card */
-}
+/* .nav, li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  float: right;
+} */
 
 .product-list {
   list-style-type: square;
@@ -173,3 +175,5 @@ button:hoverOb {
 }
 
 
+
+  

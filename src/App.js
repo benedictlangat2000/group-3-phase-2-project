@@ -1,6 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
 
+import React from "react";
+
+
+import { useState, useEffect } from "react";
+import Cart from "./Cart";
+import  "./App.css"
+import ProductDetails from './ProductDetails';
+import {Routes, Route, Link} from 'react-router-dom'
+import SignupLogin from './SignupLogin'
+import EcommerceNavbar from "./Navbar";
+
+ 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
@@ -17,12 +27,16 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div>
      
-   <Routes>
-      <Route path='/' element={<ProductList/>}/>
+
+     
+    <Routes>
+      <Route path="/"element={<EcommerceNavbar/> }>
       <Route path='/:index' element={<ProductDetails/>}/>
-         <SignupLogin/>
+      <Route path="/signup" element={<SignupLogin/>}/>
+      <Route path="/cart" element={<Cart cartItem={cartItems} />}/>
+      </Route>
     </Routes>
     </div>
   )
