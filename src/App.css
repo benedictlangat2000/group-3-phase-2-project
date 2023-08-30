@@ -17,3 +17,74 @@ body{
 .product-list li {
   margin: 5px;
 }
+
+SingupLogin {
+  width: 90%;
+  max-width: 470px;
+  background: linear-gradient( rgb(232, 194, 5),#1b0597);
+  color: #ffffff;
+  margin-top: 3%;
+  border-radius: 50px;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.auth-container {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.auth-container button {
+  background-color: hsl(18, 166, 240);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: large;
+  
+}
+
+.auth-container button:hover {
+  background-color: rgb(18, 166, 240);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #0008ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: hwb(239 0% 30%);
+}
+
