@@ -1,41 +1,89 @@
-.App {
+body{
+  background-color: orange;
+  
+}
+.product-card {
+  /* Add other styling for your product card here */
+https://github.com/benedictlangat2000/group-3-phase-2-project/pull/9/conflict?name=src%252FApp.css&ancestor_oid=74b5e053450a48a6bdb4d71aad648e7af821975c&base_oid=79a01e11494a46d64aebb27f5d3b3a2248299afd&head_oid=a66126aeb4d241cf8742374662973a2d700bb676  text-align: center; /* Center-align the content within the card */
+}
+
+.product-list {
+  list-style-type: square;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.product-list li {
+  margin: 5px;
+}
+
+SingupLogin {
+  width: 90%;
+  max-width: 470px;
+  background: linear-gradient( rgb(232, 194, 5),#1b0597);
+  color: #ffffff;
+  margin-top: 3%;
+  border-radius: 50px;
+  padding: 5px 15px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.auth-container {
+  text-align: right;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.auth-container button {
+  background-color: hsl(18, 166, 240);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: large;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.auth-container button:hover {
+  background-color: rgb(18, 166, 240);
+}
+
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #0008ff;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .App {
   text-align: center;
@@ -117,5 +165,10 @@
   margin: 20px 0;
 }
 
+
+
+button:hoverOb {
+  background-color: hwb(239 0% 30%);
+}
 
 
