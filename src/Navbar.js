@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import { FaUser, FaShoppingCart } from 'react-icons/fa';
+import Cart from './component/Cart';
 
 
 function EcommerceNavbar() {
