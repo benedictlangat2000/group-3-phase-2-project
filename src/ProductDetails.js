@@ -7,27 +7,28 @@ function ProductDetails(){
     let {index} = useParams()
     console.log(index)
     const[product, setProduct]= useState({})
+   
     useEffect(() => {
         fetch("http://ecommerce.muersolutions.com/api/v1/products")
           .then(response => response.json())
           .then(data => setProduct(data[index]) )
           .catch(error =>console.log(error))
-
-          
-        
           
       }, [index]);
-      console.log(product)
+        
+    //   console.log(product)
     
-return <div key={index}>
+return <div key={index} className="product-details-card">
      <img src ={product.product_full_image} alt={product.product_thumbnail}/>
-      <h2>{product.product_name}</h2>
-      <p>{product.product_description}</p>
-      <p>{product.unit_price} </p>
-      <p>{product.ranking} </p>
-      <p>{product.created} </p>
-      <p>{product.updated} </p>
-
+     <div className="product-details">
+      <h2>NAME : {product.product_name}</h2>
+      <p>DESCRIPTION : {product.product_description}</p>
+      <p>PRICE : {product.unit_price} </p>
+      <p>RANKING : {product.ranking} </p>
+      <p>CREATED : {product.created} </p>
+      <p>UPDATED : {product.updated} </p>
+      <button style={{'backgroundColor':"orange",'color':"black"}}>Add To Cart</button>
+      </div>
        </div>
 
 }

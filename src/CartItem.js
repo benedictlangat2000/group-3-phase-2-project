@@ -7,7 +7,6 @@ function CartItem({item,removeFromCart}){
         <p>Price:${item.price}</p>
         <button onClick={() => removeFromCart(item)}>Remove</button>
     </div>
-  {/* i am obadia  */}
  </div>
 }
 export default CartItem;
