@@ -13,33 +13,37 @@ import { useState, useEffect } from 'react';
 function EcommerceNavbar() {
 
   const[products, setProducts] = useState([])
-    
+  const[searchProduct, setSearchProduct] = useState('')
+
+   
    useEffect(()=>{
             fetch("http://ecommerce.muersolutions.com/api/v1/products")
             .then(response=>response.json())
             .then(data=>setProducts(data))
             .catch(error=>console.log(error))
-           
-
         }, [])
-        // console.log(products)
-    
 
-  return (<div>
+        const filteredProducts = products.filter((product) =>
+  product.product_name.toLowerCase().includes(searchProduct.toLowerCase())
+)
+        
+        
+  return (<div className='search'>
     <nav>
-     
-      
+    
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Group-3 shopify</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    
+        <Link to="/">Home</Link>
+      
+         <h2>ECOMMERCE SHOPIFY</h2>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <FormControl type="text" placeholder="Search products" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+          <FormControl type="text" placeholder="Search products" value={searchProduct} className="mr-sm-2" onChange={(e) => setSearchProduct(e.target.value)} />
+            <Button variant="outline-success" style={{'backgroundColor':"orange",'color':"black"}}>Search</Button>
           </Nav>
           <Nav>
-            <Nav.Link href="/account"><FaUser /> Account</Nav.Link>
+            <Nav.Link href="/signup"><FaUser /> Account</Nav.Link>
             <Nav.Link href="/cart"><FaShoppingCart /> Cart</Nav.Link>
             
           </Nav>
@@ -47,27 +51,17 @@ function EcommerceNavbar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    <nav className='nav'>
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/signup">Signup</Link>
-      </li>
-      <li>
-        <Link to="/cart">Cart</Link>
-      </li>
-    </ul>
-  </nav>
+    
+    
+  
   </nav>
   <Outlet></Outlet>
-  <div>
+  <div className='product-list'>
   <h1>Here are the products available currently</h1>
   <p>We are glad to serve you!</p>
   
-{products.map((product,index)=>(
-          <div key={index}> 
+{filteredProducts.map((product,index)=>(
+          <div key={index} className='product-card'> 
               <ul>
                   <li>
                  
