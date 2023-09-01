@@ -1,51 +1,37 @@
-
 import React from "react";
-
-
-import { useState, useEffect } from "react";
+import { Routes, Route } from 'react-router-dom';
+import ProductList from "./ProductList";
+import ProductDetails from "./ProductDetails";
 import Cart from "./Cart";
-import  "./App.css"
-import ProductDetails from './ProductDetails';
-import {Routes, Route, Link} from 'react-router-dom'
-import SignupLogin from './SignupLogin'
-import EcommerceNavbar from "./Navbar";
-
- 
-
-
-
+import Navbar from "./Navbar";
+import "./App.css";
+import { useState } from "react";
+import SignupLogin from "./SignupLogin"
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    // Fetch API
-    fetch("http://ecommerce.muersolutions.com/api/v1/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setCartItems(data); // Update the cart items state with the fetched data
-      })
-      .catch((error) => {
-        console.error("Error fetching cart items:", error);
-      });
-  }, []);
+  const addToCart = (product) => {
+    setCartItems(prevCartItems => [...prevCartItems, product]);
+  };
 
+  // Function to calculate the total number of items in the cart
+  function getTotalItems(){
+    return cartItems.length;
+  };
+
+  
   return (
     <div>
-     
-
-     
-    <Routes>
-      <Route path="/"element={<EcommerceNavbar/> }>
-      <Route path='/:index' element={<ProductDetails/>}/>
-      <Route path="/signup" element={<SignupLogin/>}/>
-      <Route path="/cart" element={<Cart cartItem={cartItems} />}/>
-      </Route>
-    </Routes>
-
+      <Navbar totalItems={getTotalItems()} />
+      <Routes>
+      <Route path="/" element={<ProductList addToCart={addToCart} cartItems={cartItems} setCartItems={setCartItems} />} />
+      <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+      <Route path="/:index" element={<ProductDetails />} />
+      <Route path="signup" element={<SignupLogin/>}/>
+      </Routes>
     </div>
-  )
+  );
+}
 
-  }
-export default App;
-
+export default App
