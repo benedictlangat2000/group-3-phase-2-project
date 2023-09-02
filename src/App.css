@@ -1,324 +1,130 @@
-
-body{
-background-color: hsl(22, 72%, 42%);
-}
-.search {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color:white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav {
-  background-color:white;
-  font-weight: bold;
-  color: black;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.nav ul {
-  list-style: none;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
   padding: 0;
+  width: 90%;
+  
+}
+.searchBar{
+ margin-left: 40%;
+margin-top: 20px;
+}
+.paragraph{
+  text-align: center;
+  margin-top: 30px;
 }
 
-.nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+nav {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  display: flex; /* Use flex display */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  margin-left: 10px;
+ 
 }
 
-.nav ul li a {
+nav a {
+  color: white;
   text-decoration: none;
-  color: black;
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+ 
+
 }
 
-.nav ul li a:hover {
-  text-decoration: underline;
+
+h2 {
+  margin-top: 5px;
+  
 }
 
 
-.product-list {
-  list-style-type: square;
+
+
+  
+ 
+ 
+  
+
+
+nav a:hover {
+  color: orange;
+}
+
+
+
+.product-list-container {
   display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
-
-.product-list li {
-  margin: 5px;
-}
-
-.product-list {
-  background-color: orange;
-  padding: 20px;
-}
-
-.product-cards {
-  background-color: orange;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  flex-wrap: wrap;
+ 
+ justify-content: center;
+  margin-top: 40px;
 }
 
 .product-card {
-  border: 1px solid #7e7b9e;
-  padding: 2px;
-  text-align: center;
+  width: 30%; /* Set a fixed width for the card */
+   /* Set a fixed height for the card */
+  /* flex: 0 0 auto; Maintain the fixed width and height */
+  border: 1px solid #ccc; /* Add a border for visibility */
+  padding: 20px; /* Add padding to the card */
+  justify-content: space-between;
+margin: 10px;
+  height: 600px;
+   
+  
+
 }
+
+.product-card h2 {
+  font-size: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* .product-card img {
+
+ 
+} */
+.product-details-card{
+  display: flex;
+  align-items: center;
+}
+
 
 .product-card img {
-  max-width: 20%;
+  max-width: 45%;
   height: auto;
-  margin-bottom: 10px;
-
-}
-
-.details-button {
-  display:inline-block;
-  padding: 5px 10px;
-  background-color: #e7ebee;
-  color: #f6f2e8;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-
-.product-details-card {
-  display: flex;
-  border: 1px solid #efc809;
-  padding: 20px;
-  margin: 20px;
-}
-
-.product-details-card img {
-  max-width: 40%;
   margin-right: 20px;
-}
-
-.product-details {
-  flex: 1;
-}
-
-
-.SignupLogin {
-  border-style: double;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  width: 90%;
-  max-width: 470px;
-  background: linear-gradient(135deg, #df8c0f,#1b0597);
-  color: #fff;
-  margin-top: 3%;
-   margin-left: 33%;
-   border-radius: 70px;
-   padding: 40px 35px;
-   text-align: center;
-}
-
-h1 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.auth-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.auth-container button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 10px;
-}
-
-.auth-container button:hover {
-  background-color:orange;
-}
-
-.form {
-  width: 300px;
+  display: block; /* This helps center the image within the flex container */
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-}
-.form h2 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.form button {
-  width: 100%;
-  background-color: orange;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.form button:hover {
-  background-color: orange;
-}
-
-/* 
-.auth-container {
-  text-align: right;
-  margin-top: 20px;
-}
-
-.auth-container button {
-  background-color: hsl(18, 166, 240);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px;
-  font-size: large;
   
 }
 
-.auth-container button:hover {
-  background-color: rgb(18, 166, 240);
-} */
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-h1 {
-  margin-bottom: 20px;
-}
-
-h2 {
-  margin-bottom: 10px;
-  font-size: 30px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-}
-
-button {
-  background-color: #efeff7;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
 
 
-.App {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-
-
-.cart {
-  border: 2px solid #ccc;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 400px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-
-.cart h2 {
+.product-details h2 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-top: 0;
 }
 
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+.product-details p {
+  margin: 5px 0;
 }
 
-
-.cart-item img {
-  max-width: 100px;
-  max-height: 100px;
-  margin-right: 20px;
-  border-radius: 5px;
-}
-
-
-.cart-item div {
-  flex: 1;
-}
-
-.cart-item h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-
-
-.cart-item p {
-  font-size: 16px;
-  margin: 0;
-}
-
-.cart-item button {
-  background-color: #ff6347;
-  color: #fff;
+.product-details button {
+  background-color: orange;
+  color: black;
   border: none;
-  padding: 5px 10px;
-  font-size: 14px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 
-.cart p:last-child {
-  font-size: 20px;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-
-.cart p:only-child {
-  font-size: 18px;
-  font-style: italic;
-  margin: 20px 0;
-}
 
 
 
-button:hoverOb {
-  background-color: hwb(239 0% 30%);
-}
 
-
-
-  

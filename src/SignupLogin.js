@@ -1,157 +1,101 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState } from "react";
 
 function SignupLogin() {
-  const [showSignup, setShowSignup] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const toggleSignup = () => {
-    setShowSignup(!showSignup);
-    setShowLogin(false); // Close login form when opening signup form
+  const handleFirstName = (e) => {
+    setFirstName(e.target.value);
   };
 
-  const toggleLogin = () => {
-    setShowLogin(!showLogin);
-    setShowSignup(false); // Close signup form when opening login form
+  const handleLastName = (e) => {
+    setLastName(e.target.value);
   };
 
-  const [signupFormData, setSignupFormData] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: ''
-  });
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
-  const [loginFormData, setLoginFormData] = useState({
-    username: '',
-    password: '',
-    scope: '',
-    client_id: '',
-    client_secret: ''
-  });
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
-  const handleSignup = async () => {
-    try {
-      const response = await fetch('http://ecommerce.muersolutions.com/api/v1/user/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(signupFormData),
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const signUpData = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password,
+    };
+
+    fetch("http://ecommerce.muersolutions.com/api/v1/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(signUpData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        
+        console.log(data);
+      })
+      .catch((error) => {
+        
+        console.error("Registration failed:", error);
       });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Signup successful:', data);
-      } else {
-        console.log('Signup failed');
-      }
-    } catch (error) {
-      console.error('Error during signup:', error);
-    }
   };
-
-  const handleLogin = async () => {
-    try {
-      const response = await fetch('http://ecommerce.muersolutions.com/api/v1/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(loginFormData),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Login successful:', data);
-      } else {
-        console.log('Login failed');
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-    }
-  };
-
-  useEffect(() => {
-    console.log('Component mounted');
-  }, []);
 
   return (
-    <div className="App">
-      <h1>User Authentication</h1>
-
-      <div className="auth-container">
-        <button onClick={toggleSignup}>Sign Up</button>
-        <button onClick={toggleLogin}>Login</button>
-      </div>
-
-      {showSignup && (
-        <div className="form">
-          <h2>Sign Up</h2>
-          <input
-            type="text"
-            placeholder="First Name"
-            value={signupFormData.first_name}
-            onChange={(e) => setSignupFormData({ ...signupFormData, first_name: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={signupFormData.last_name}
-            onChange={(e) => setSignupFormData({ ...signupFormData, last_name: e.target.value })}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={signupFormData.email}
-            onChange={(e) => setSignupFormData({ ...signupFormData, email: e.target.value })}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={signupFormData.password}
-            onChange={(e) => setSignupFormData({ ...signupFormData, password: e.target.value })}
-          />
-          <button onClick={handleSignup}>Sign Up</button>
-        </div>
-      )}
-
-      {showLogin && (
-        <div className="form">
-          <h2>Login</h2>
-          <input
-            type="text"
-            placeholder="Username"
-            value={loginFormData.username}
-            onChange={(e) => setLoginFormData({ ...loginFormData, username: e.target.value })}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={loginFormData.password}
-            onChange={(e) => setLoginFormData({ ...loginFormData, password: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Scope"
-            value={loginFormData.scope}
-            onChange={(e) => setLoginFormData({ ...loginFormData, scope: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Client ID"
-            value={loginFormData.client_id}
-            onChange={(e) => setLoginFormData({ ...loginFormData, client_id: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Client Secret"
-            value={loginFormData.client_secret}
-            onChange={(e) => setLoginFormData({ ...loginFormData, client_secret: e.target.value })}
-          />
-          <button onClick={handleLogin}>Login</button>
-        </div>
-      )}
+    <div>
+      <h2>Registration</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="first_name">First Name:</label>
+        <input
+          type="text"
+          id="first_name"
+          name="first_name"
+          value={firstName}
+          onChange={handleFirstName}
+          required
+        />
+        <br />
+        <label htmlFor="last_name">Last Name:</label>
+        <input
+          type="text"
+          id="last_name"
+          name="last_name"
+          value={lastName}
+          onChange={handleLastName}
+          required
+        />
+        <br />
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          onChange={handleEmail}
+          required
+        />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+          required
+        />
+        <br />
+        <button type="submit">Sign Up</button>
+      </form>
     </div>
   );
 }
