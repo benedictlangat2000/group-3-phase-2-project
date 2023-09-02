@@ -5,23 +5,7 @@ function Cart({ cartItem, removeFromCart }) {
   const calculateTotal = () => {
     return cartItem.reduce((total, item) => total + item.price, 0);
   };
-  // const addToCart = (product, quantity) => {
-  //   const updatedCart = [...cart];
-  //   const existingItem = updatedCart.find(item => item.id === product.id);
-
-  //   if (existingItem) {
-  //     existingItem.quantity += quantity;
-  //   } else {
-  //     updatedCart.push({ ...product, quantity });
-  //   }
-
-  //   setCart(updatedCart);
-  // };
-
-  // const removeFromCart = (productId) => {
-  //   const updatedCart = cart.filter(item => item.id !== productId);
-  //   setCart(updatedCart);
-  // };
+  
 
   return (
     <div className="cart">
@@ -36,10 +20,10 @@ function Cart({ cartItem, removeFromCart }) {
           <p>Total: ${calculateTotal()}</p>
         </div>
       )}
-      
-
+     
     </div>
-  );
+
+  )
 }
 
 export default Cart;
