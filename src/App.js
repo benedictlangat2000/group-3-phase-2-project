@@ -9,6 +9,8 @@ import ProductDetails from './ProductDetails';
 import {Routes, Route, Link} from 'react-router-dom'
 import SignupLogin from './SignupLogin'
 import EcommerceNavbar from "./Navbar";
+import OrderTracking from "./trackorder";
+import Checkout from "./checkout";
 
  
 function App() {
@@ -38,6 +40,8 @@ function App() {
       <Route path="/cart" element={<Cart cartItem={cartItems} />}/>
       </Route>
     </Routes>
+    <OrderTracking/>
+    <Checkout/>
     </div>
   )
 
