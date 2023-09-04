@@ -60,7 +60,7 @@ function App() {
     } catch (error) {
       console.error('Error during signup:', error);
       // Display an alert with an error message
-      alert('Error during signup ');
+      alert('Error during signup');
     }
   };
 
