@@ -59,4 +59,11 @@ function Checkout({ cartItems }) {
           <button onClick={handleStepBack}>Back</button>
         )}
         {step < 3 && (
-      
+          <button onClick={handleStepNext}>Next</button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default Checkout
