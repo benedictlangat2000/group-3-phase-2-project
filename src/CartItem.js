@@ -2,7 +2,7 @@ import React from "react";
 
 function CartItem({ item, removeCartItem }) {
   
-
+  // Function to handle the removal of a cart item
 function handleRemoveCartItem() {
    removeCartItem(item);
 }

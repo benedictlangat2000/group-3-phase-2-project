@@ -27,17 +27,20 @@ function PaymentForm({ onNext }) {
           onChange={handleInputChange}
         />
 
-        <label>Billing Address:</label>
-        <input
-          type="text"
-          name="billingAddress"
-          value={paymentInfo.billingAddress}
-          onChange={handleInputChange}
-        />
+    <label>Billing Address:</label>
+    <input
+      type="text"
+      name="billingAddress"
+      value={paymentInfo.billingAddress}
+      onChange={handleInputChange}
+    />
 
-        
-      </form>
-    </div>
+<button type="button" onClick={handleNextClick}>
+          Next
+        </button>
+  </form>
+</div>
+
   );
 }
 

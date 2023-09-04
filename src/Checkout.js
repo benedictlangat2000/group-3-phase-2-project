@@ -18,20 +18,20 @@ function Checkout({ cartItems }) {
 
   const handlePaymentSubmit = (paymentData) => {
     setFormData({ ...formData, paymentInfo: paymentData });
-   
+
     const totalAmount = calculateTotalAmount(cartItems); 
     const order = {
       shippingAddress: formData.shippingAddress,
       paymentInfo: formData.paymentInfo,
       totalAmount,
-     
+
     };
     setFormData({ ...formData, order });
     setStep(3); 
   };
 
   const calculateTotalAmount = (items) => {
-    
+
     return items.reduce((total, item) => total + item.unit_price, 0);
   };
 
@@ -66,4 +66,4 @@ function Checkout({ cartItems }) {
   );
 }
 
-export default Checkout;
+export default Checkout

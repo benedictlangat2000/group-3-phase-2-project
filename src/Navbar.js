@@ -1,17 +1,9 @@
 import React from 'react';
-
-
-
-
-
-import {FaShoppingCart } from 'react-icons/fa';
-
+import { FaShoppingCart } from 'react-icons/fa'; // Importing the shopping cart icon
 import { Outlet, Link } from 'react-router-dom';
 
-
-
-function Navbar({totalItems}) {
-
+function Navbar({ totalItems }) {
+  // The Navbar component receives a "totalItems" prop to display the total number of items in the cart
   
         
         
@@ -27,13 +19,11 @@ function Navbar({totalItems}) {
       <Link to="/signup">Signup</Link>
       <Link to="/checkout">Checkout</Link>
       </nav>
-     
-     
-      
-  <Outlet></Outlet>
-  
-    
-</div>);
+
+      {/* Outlet to render nested routes */}
+      <Outlet></Outlet>
+    </div>
+  );
 }
 
 export default Navbar;

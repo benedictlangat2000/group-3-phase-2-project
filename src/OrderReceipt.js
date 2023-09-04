@@ -6,7 +6,7 @@ function OrderReceipt({ order }) {
       <h2>Order Receipt</h2>
       {order && (
         <div>
-         
+        
           <p>Shipping Address:</p>
           <p>Name: {order.shippingAddress.name}</p>
           <p>Address Line: {order.shippingAddress.addressLine}</p>

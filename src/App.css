@@ -131,9 +131,10 @@ span {
 }
 
 .product-details img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   margin-bottom: 10px;
+  
 }
 
 .product-details h2 {
@@ -223,7 +224,11 @@ button {
 button:hover {
   background-color: orange;
 }
-
+.cart-item img{
+  max-width: 15%;
+  height: auto;
+  margin-bottom: 10px;
+}
 
 
 
