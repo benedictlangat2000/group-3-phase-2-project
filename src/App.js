@@ -1,3 +1,4 @@
+// Import React and necessary components and functions from libraries
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import ProductList from "./ProductList";
@@ -9,8 +10,10 @@ import { useState } from "react";
 import SignupLogin from "./SignupLogin"
 
 function App() {
+  // Initialize state for managing the cart items
   const [cartItems, setCartItems] = useState([]);
 
+  // Function to add a product to the cart
   const addToCart = (product) => {
     setCartItems(prevCartItems => [...prevCartItems, product]);
   };
@@ -19,19 +22,21 @@ function App() {
   function getTotalItems(){
     return cartItems.length;
   };
-
   
   return (
     <div>
+      {/* Render the Navbar component and pass the total number of items in the cart */}
       <Navbar totalItems={getTotalItems()} />
       <Routes>
-      <Route path="/" element={<ProductList addToCart={addToCart} cartItems={cartItems} setCartItems={setCartItems} />} />
-      <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
-      <Route path="/:index" element={<ProductDetails />} />
-      <Route path="signup" element={<SignupLogin/>}/>
+        {/* Define routes for different views */}
+        <Route path="/" element={<ProductList addToCart={addToCart} cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route path="/:index" element={<ProductDetails />} />
+        <Route path="signup" element={<SignupLogin/>}/>
       </Routes>
     </div>
   );
 }
 
-export default App
+// Export the App component as the default export
+export default App;
