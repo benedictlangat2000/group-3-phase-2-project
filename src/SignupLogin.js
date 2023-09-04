@@ -51,7 +51,7 @@ function App() {
          // Reset the signup form fields after a successful signup
          setSignupFormData({ first_name: '', last_name: '', email: '', password: '' });
         // Display an alert with the signup response message
-        alert('Signup successful ' );
+        alert('Signup successful'+ data.message );
   
       } else {
         // Display an alert with an error message
@@ -60,7 +60,7 @@ function App() {
     } catch (error) {
       console.error('Error during signup:', error);
       // Display an alert with an error message
-      alert('Error during signup ');
+      alert('Error during signup');
     }
   };
 
