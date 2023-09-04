@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
 
+import React from "react";
+
+
+import { useState, useEffect } from "react";
+import Cart from "./Cart";
+import  "./App.css"
+import ProductDetails from './ProductDetails';
+import {Routes, Route, Link} from 'react-router-dom'
+import SignupLogin from './SignupLogin'
+import EcommerceNavbar from "./Navbar";
+import OrderTracking from "./trackorder";
+import Checkout from "./checkout";
+
+ 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [cartItems, setCartItems] = useState([]);
 
+  useEffect(() => {
+    // Fetch API
+    fetch("http://ecommerce.muersolutions.com/api/v1/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setCartItems(data); // Update the cart items state with the fetched data
+      })
+      .catch((error) => {
+        console.error("Error fetching cart items:", error);
+      });
+  }, []);
+
+  return (
+    <div>
+     
+
+     
+    <Routes>
+      <Route path="/"element={<EcommerceNavbar/> }>
+      <Route path='/:index' element={<ProductDetails/>}/>
+      <Route path="/signup" element={<SignupLogin/>}/>
+      <Route path="/cart" element={<Cart cartItem={cartItems} />}/>
+      </Route>
+    </Routes>
+    <OrderTracking/>
+    <Checkout/>
+    </div>
+  )
+
+  }
 export default App;
+
