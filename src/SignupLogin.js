@@ -48,8 +48,11 @@ function App() {
 
       if (response.ok) {
         const data = await response.json();
+         // Reset the signup form fields after a successful signup
+         setSignupFormData({ first_name: '', last_name: '', email: '', password: '' });
         // Display an alert with the signup response message
-        alert('Signup successful: ' + data.message);
+        alert('Signup successful ' );
+  
       } else {
         // Display an alert with an error message
         alert('Signup failed');
@@ -57,7 +60,7 @@ function App() {
     } catch (error) {
       console.error('Error during signup:', error);
       // Display an alert with an error message
-      alert('Error during signup: ' + error.message);
+      alert('Error during signup ');
     }
   };
 
@@ -74,6 +77,8 @@ function App() {
 
       if (response.ok) {
         const data = await response.json();
+        //Reset the login field after succesful login
+        setLoginFormData({ username: '', password: '', scope: '', client_id: '', client_secret: '' });
         // Display an alert with the login response message
         alert('Login successful: ' + data.message);
       } else {
@@ -131,7 +136,8 @@ function App() {
             onChange={(e) => setSignupFormData({ ...signupFormData, password: e.target.value })}
           />
           {/* Button to trigger signup */}
-          <button onClick={handleSignup}>Sign Up</button>
+          <button onClick={handleSignup} >Sign Up</button>
+          
         </div>
       )}
 

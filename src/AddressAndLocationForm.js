@@ -68,7 +68,7 @@ function AddressAndLocationForm({ onNext }) {
 
   return (
     <div>
-      <h2>Shipping Address</h2>
+      <h2>Delivery Address</h2>
       <form>
         <label>Name:</label>
         <input
@@ -115,6 +115,7 @@ function AddressAndLocationForm({ onNext }) {
         <button type="button" onClick={handleNextClick}>
           Next
         </button>
+        
       </form>
     </div>
   );

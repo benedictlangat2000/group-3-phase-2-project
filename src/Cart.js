@@ -8,7 +8,6 @@ function Cart({ cartItems, setCartItems }) {
       prevCartItems.filter((cartItem) => cartItem !== item)
     );
   }
-
   return (
     <div className="cart">
       <h2>Cart</h2>
