@@ -14,7 +14,8 @@ Welcome to the Buy & Carry e-commerce platform, where you can explore a wide ran
 - [Checkout Component](#checkout-component)
 - [License](#license)
 
-
+# Deployed App
+(https://group-3-phase-2-project-bq0kn4cg6-benedictlangat2000.vercel.app/)
 # SignupLogin Component
 
 The `SignupLogin` component is responsible for user authentication, including user registration (sign-up) and user login.
