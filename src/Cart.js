@@ -27,7 +27,8 @@ function Cart({ cartItems, setCartItems }) {
         <p>No products added to cart.</p>
       )}
     </div>
-  );
+
+  )
 }
 
 export default Cart;
