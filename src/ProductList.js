@@ -31,7 +31,8 @@ function ProductList({addToCart,cartItems, setCartItem}) {
         <input type="text" placeholder="Search products" value={searchProduct} onChange={handleSearch} className="searchBar" />
         <div className="paragraph">
           <h2>Here are the products available currently</h2>
-          <h3>We are glad to serve you!</h3>
+          <h3>We are glad to serve you! <span>Kindly click on the photo to product details</span> </h3>
+          
         </div>
         <div className="product-list-container">
           {filteredProducts.map((product, index) => (
@@ -44,7 +45,7 @@ function ProductList({addToCart,cartItems, setCartItem}) {
           ))}
         </div>
         
-        <Cart cartItems={cartItems} setCartItems={setCartItem} /> 
+        
       </div>
     );
   }

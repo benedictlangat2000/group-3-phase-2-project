@@ -11,9 +11,6 @@ function PaymentForm({ onNext }) {
     setPaymentInfo({ ...paymentInfo, [name]: value });
   };
 
-  const handleNextClick = () => {
-    onNext(paymentInfo);
-  };
 
   return (
     <div>
@@ -35,9 +32,7 @@ function PaymentForm({ onNext }) {
           onChange={handleInputChange}
         />
 
-        <button type="button" onClick={handleNextClick}>
-          Next
-        </button>
+        
       </form>
     </div>
   );

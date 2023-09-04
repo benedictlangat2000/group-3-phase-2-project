@@ -18,12 +18,14 @@ function Navbar({totalItems}) {
   return (<div className='search'>
     
 
-      <h2>Buy&Carry</h2>
+      
       <nav>
+      <h2>Buy&Carry</h2>
+      
       <Link to="/">Home</Link>
-       {/* <Button variant="outline-success" style={{'backgroundColor':"orange",'color':"black"}}>Search</Button> */}
-      <Link to="/signup">Signup</Link>
       <Link to="/cart"><FaShoppingCart /> Cart({totalItems})</Link>
+      <Link to="/signup">Signup</Link>
+      <Link to="/checkout">Checkout</Link>
       </nav>
      
      

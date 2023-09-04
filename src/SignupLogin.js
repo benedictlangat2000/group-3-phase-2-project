@@ -1,57 +1,52 @@
 import React, { useState } from "react";
 
 function SignupLogin() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
 
-  const handleFirstName = (e) => {
-    setFirstName(e.target.value);
+  const [signUpResponse, setSignUpResponse] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const handleLastName = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const signUpData = {
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      password: password,
-    };
+    try {
+      const response = await fetch(
+        "http://localhost:8080/signUp", // Change to the correct URL for your API endpoint
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    fetch("http://ecommerce.muersolutions.com/api/v1/user/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(signUpData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        
-        console.log(data);
-      })
-      .catch((error) => {
-        
-        console.error("Registration failed:", error);
-      });
+      if (!response.ok) {
+        throw new Error("Server error");
+      }
+
+      const data = await response.json();
+      setSignUpResponse(data);
+    } catch (error) {
+      console.error(error);
+      setSignUpResponse({ error: "An error occurred while signing up." });
+    }
   };
 
   return (
-    <div>
+    <>
       <h2>Registration</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="first_name">First Name:</label>
@@ -59,8 +54,8 @@ function SignupLogin() {
           type="text"
           id="first_name"
           name="first_name"
-          value={firstName}
-          onChange={handleFirstName}
+          value={formData.first_name}
+          onChange={handleInputChange}
           required
         />
         <br />
@@ -69,8 +64,8 @@ function SignupLogin() {
           type="text"
           id="last_name"
           name="last_name"
-          value={lastName}
-          onChange={handleLastName}
+          value={formData.last_name}
+          onChange={handleInputChange}
           required
         />
         <br />
@@ -79,8 +74,8 @@ function SignupLogin() {
           type="email"
           id="email"
           name="email"
-          value={email}
-          onChange={handleEmail}
+          value={formData.email}
+          onChange={handleInputChange}
           required
         />
         <br />
@@ -89,14 +84,17 @@ function SignupLogin() {
           type="password"
           id="password"
           name="password"
-          value={password}
-          onChange={handlePassword}
+          value={formData.password}
+          onChange={handleInputChange}
           required
         />
         <br />
         <button type="submit">Sign Up</button>
       </form>
-    </div>
+      {signUpResponse && signUpResponse.error && (
+        <p>{signUpResponse.error}</p>
+      )}
+    </>
   );
 }
 
