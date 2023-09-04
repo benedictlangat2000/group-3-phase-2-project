@@ -112,9 +112,9 @@ function AddressAndLocationForm({ onNext }) {
             </option>
           ))}
         </select>
-        <button type="button" onClick={handleNextClick}>
+        {/* <button type="button" onClick={handleNextClick}>
           Next
-        </button>
+        </button> */}
       </form>
     </div>
   );

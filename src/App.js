@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import "./App.css";
 import { useState } from "react";
 import SignupLogin from "./SignupLogin"
+import Checkout from "./Checkout";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -29,6 +30,7 @@ function App() {
       <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
       <Route path="/:index" element={<ProductDetails />} />
       <Route path="signup" element={<SignupLogin/>}/>
+      <Route path="checkout" element={<Checkout cartItems={cartItems} />} />
       </Routes>
     </div>
   );
