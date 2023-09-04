@@ -1,38 +1,237 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  
+}
+
+
+
+.search {
+  background-color: orange;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px;
+}
+
+
+.search nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.search h2 {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+
+.search nav a {
+  text-decoration: none;
+  color: white;
+  margin-right: 16px;
+}
+
+.search nav a svg {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+
+.search nav a .cart-count {
+  color: #fff;
+  background-color: orange;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+
+
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+ 
+ justify-content: center;
+  margin-top: 40px;
+}
+
+.product-card {
+  width: 30%; 
+  
+  border: 1px solid #ccc; 
+  padding: 20px; 
+  justify-content: space-between;
+margin: 10px;
+  height: 600px;
+   
+  }
+
+.product-card h2 {
+  font-size: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+span {
+
+ color: red;
+}
+.product-details-card{
+  display: flex;
+  align-items: center;
+}
+
+
+.product-card img {
+  max-width: 45%;
+  height: auto;
+  margin-right: 20px;
+  display: block; 
+  margin: 0 auto;
+  
+}
+
+
+
+.product-details h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.product-details p {
+  margin: 5px 0;
+}
+
+.product-details button {
+  background-color: orange;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product-details-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.product-details {
+  border: 1px solid #ccc;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-details img {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-details h2 {
+  font-size: 24px;
+  margin: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.product-details p {
+  font-size: 16px;
+  margin: 5px 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Cart.css */
+
+.cart {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 16px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
 }
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart p {
+  font-size: 18px;
+  color: #888;
+}
+
+
+div {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px;
+}
+
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+button {
+  background-color:orange;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+button:hover {
+  background-color: orange;
+}
+.cart-item img{
+  max-width: 15%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
