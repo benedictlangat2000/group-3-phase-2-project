@@ -11,6 +11,9 @@ function PaymentForm({ onNext }) {
     setPaymentInfo({ ...paymentInfo, [name]: value });
   };
 
+  const handleNextClick = () => {
+    onNext(paymentInfo);
+  };
 
   return (
     <div>
